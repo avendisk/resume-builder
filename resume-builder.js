@@ -1,7 +1,5 @@
 
-function dropDown(dropDown) {
-    dropDown.getElementsByClassName("dropdown-content")[0].classList.toggle("show");
-  }
+
 function loadNewStyles(){
     newStyle = document.getElementById("style-change").value;
     document.getElementById("resume-style").setAttribute("href","resume-styles/"+newStyle+".css")
@@ -20,12 +18,13 @@ function downloadResume(downloadNode){
 };
 
 
-//close the dropdown menu
+function dropDown(dropDown) {
+  dropDown.getElementsByClassName("dropdown-content")[0].classList.toggle("show");
+}
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
+    for (let i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
       if (openDropdown.classList.contains("show")) {
         openDropdown.classList.remove("show");
