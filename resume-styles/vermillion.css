@@ -54,10 +54,10 @@ ul{
 .school-name,.job-title{
     font-weight: bold;
     font-size:larger;
-    flex-basis:70%;
+    /* flex-basis:70%; */
     text-decoration:underline;
 }
-.list-title,.activity-title{
+.list-title,.activity-title,.title{
     font-weight:bold;
     text-decoration:underline;
 }
@@ -74,13 +74,23 @@ ul{
     flex-wrap: wrap; 
     display: flex;
     align-items: stretch;
+    flex-grow: 1;
 }
 ul>.bold,.company-name,.major{
     font-weight: bold;
 }
-.essentials .title{
+/* .essentials .title{
     flex-basis:80%;
+    
+} */
+.essentials>div:nth-child(odd){
+    flex-basis:70%;
 }
+.essentials>div:nth-child(even){
+    flex-basis:30%;
+}
+
+
 .hide{
     display: none;
 }
@@ -92,5 +102,5 @@ ul>.bold,.company-name,.major{
 .school-location,.date,.location{
     text-align: right;
     font-weight: bold;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }

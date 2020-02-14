@@ -1,18 +1,20 @@
 $(document).ready(function(){
+  // set each of the tags without a child tag (i.e.) text
+  // to be editable
   $("#resume *").each(function(){
-    // console.log(this)
     if(this.children.length == 0){
       $(this).attr("contenteditable","true")
-      console.log(this)
     }
   });
 });
 
+// if we want to change styles before we download the resume
 function loadNewStyles(){
     newStyle = document.getElementById("style-change").value;
     document.getElementById("resume-style").setAttribute("href","resume-styles/"+newStyle+".css")
 }
 
+// export the html that will be used in our document
 function downloadResume(downloadNode){
     a = document.createElement("a");
     blob = new Blob(
@@ -27,11 +29,12 @@ function downloadResume(downloadNode){
 
 
 function dropDown(dropDown) {
-  dropDown.getElementsByClassName("dropdown-content")[0].classList.toggle("show");
+  $(".dropdown-content")[0].classList.toggle("show");
 }
+
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var dropdowns = $(".dropdown-content");
     for (let i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
       if (openDropdown.classList.contains("show")) {
@@ -39,4 +42,34 @@ window.onclick = function(event) {
       }
     }
   }
+}
+
+// this is the html to create a dropdown
+/* <div class="dropdown">
+<button onclick="dropDown(this.parentNode)" class="dropbtn">+</button>
+<div id="myDropdown" class="dropdown-content">
+    <a href="#" onclick="addItem(this)" class="add-section">Add New Section</a>
+    <a href="#" onclick="addItem(this)" class="add-section">Link 2</a>
+    <a href="#" onclick="addItem(this)" class="add-section">Link 3</a>
+</div>
+</div> */
+function addItem(itemType){
+  console.log($(itemType).attr("class"));
+  switch($(itemType).attr("class")){
+    case "add-section":
+      var template = $("#education-template").html();
+      console.log("adding a new section...education");
+      console.log($(itemType).parent().parent());
+      $(itemType).parent().parent().before(template);
+      break;
+    case "add-something-else":
+      // code block
+      break;
+    default:
+      console.log("we've added an invalid class");
+  }
+  // var temp = document.getElementsByTagName("template")[0];
+  // var clon = temp.content.cloneNode(true);
+  // document.body.appendChild(clon);
+
 }
