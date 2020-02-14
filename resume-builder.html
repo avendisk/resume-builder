@@ -3,42 +3,47 @@
 <head>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="resume-builder.js"></script>
-</head>
-<!-- <form> -->
-<head>
+    <script src="js/resume-builder.js"></script>
     <link rel="stylesheet" type="text/css" href="resume-builder.css" />
 </head>
+<!-- <form> -->
 <body>
-    <div id="printable-resume">
-    <link rel="stylesheet" type="text/css" id="resume-style" href="resume-styles/standard.css" />
-    <div id="contact-info"contenteditable="true" >
-    <div id="name">Steve Stevenson</div>
-    <div id="phone-number">###-####-####</div>
-    <div id="email">fake@fake.com</div>
-    <div id="website">https://www.lipsum.com/</div>
+<div id="print-space">
+<div id="resume">
+    <!-- we might want to move this to the head then, dynamically add it to print in resume-builder.js -->
+    <link rel="stylesheet" type="text/css" id="resume-style" href="resume-styles/vermillion.css" />
+    <div id="contact-info" >
+        <div id="name"></div>
+        <div id="phone-number"></div>
+        <div id="email"></div>
+        <div id="website"></div>
     </div>
+
+    <!-- could consider renaming this since contact info is sort of content -->
     <div id="resume-content" contenteditable="true">
+
     <div class="section" id="education">
-        <div class="section-header" >Education</div>
+        <div class="section-header" ></div>
         <div class="essentials">
-        <div class="school-name">
-        Fake Institute of Technology</div>
-        <div class="school-location">Winchesterville, NY</div>
-        <div class="major">BS in Webdesign</div>
-        <div class="date">September 2004 to May 2008</div>
+            <div class="school-name"></div>
+            <div class="location">test longer olonger</div>
+            <div class="major"></div>
+            <div class="date">September 2004 to May 2008</div>
         </div>
         <div>Minor: Business Admin</div>
         <div>GPA:3.22/4.0</div>
         2005 - Summer study abroad in Spain, where I mostly didn't study
     </div>
+
     <div class="section" id="work-experience">
         <div class="section-header">Work Experience</div>
         <div class="company">
             <div class="essentials">
+            <div class="job-title title">Job Title</div>
+            <div class="job-dates date">8/2015 - Present</div>
             <div class="company-name">Company Name</div>
-            <div class="job-dates">8/2015 - Present</div>
-            <div class="job-title">Job Title</div>
+            <div class="location">City, State, Country</div>
+            
             </div>
             Here's a description of what my general responsibilities were.
             <ul class="responsibilities">
@@ -53,35 +58,38 @@
     <div class="section-header">Skills</div>
     <div class="skill-lists">
     <ul class="skill-list">
-        Computer Skills
+        <span class="bold">Computer Skills</span>
         <li>HTML/CSS and Javascript</li>
         <li>PHP and MySQL</li>
         <li>C# and XNA</li>
         <li>Bash</li>
     </ul>
     <ul class="skill-list">
-            Language Skills
+            <span class="bold">Language Skills</span>
             <li>Russian - Beginner</li>
             <li>English - Native</li>
             <li>Spanish - Intermediate</li>
         </ul>
     
     </div></div>
+  
+   
     <div class="section" id="activites">
     <div class="section-header">Activities</div>
-    
-    <div class="essentials" >
-    <div class="activity-title">Fan of being a Fan Club</div>
-    <div class="date">3/2004-3/2012</div></div>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie urna quis vehicula 
-    tincidunt. Praesent commodo risus velit, id gravida velit bibendum ut. Morbi fringilla, 
-    massa aliquet euismod pretium, metus sapien porttitor risus, sed tempus est elit vel urna.
-    </div>
-
-
-            
+    <div class="activity">
+        <div class="essentials" >
+        <div class="activity-title title">Fan of being a Fan Club</div>
+        <div class="date">3/2004-3/2012</div></div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie urna quis vehicula 
+        tincidunt. Praesent commodo risus velit, id gravida velit bibendum ut. Morbi fringilla, 
+        massa aliquet euismod pretium, metus sapien porttitor risus, sed tempus est elit vel urna.
         </div>
     </div>
+
+            
+    </div>
+</div><!-- Resume -->
+</div><!-- Print Space-->
     <div class="dropdown">
         <button onclick="dropDown(this.parentNode)" class="dropbtn">+</button>
         <div id="myDropdown" class="dropdown-content">

@@ -43,3 +43,43 @@
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
+
+
+  /* Default texts for all divs */
+#email:empty:before{
+  content:"youremail@domain.com";
+  color: rgb(172, 172, 172);
+}
+#name:empty:before{
+  content:"FirstName Lastname";
+  color: rgb(172, 172, 172);
+}
+#phone-number:empty:before{
+  content:"###-####-####";
+  color: rgb(172, 172, 172);
+}
+#website:empty:before{
+  content:"https://www.lipsum.com/";
+  color: rgb(172, 172, 172);
+}
+.section-header:empty:before{
+  content:"Section";
+  color: rgb(172, 172, 172);
+}
+.school-name:empty:before{
+  content:"School Name";
+  color: rgb(172, 172, 172);
+}
+.school-location:empty:before{
+  content:"School location";
+  color: rgb(172, 172, 172);
+}
+.major:empty:before{
+  content:"BS in Major";
+  color: rgb(172, 172, 172);
+}
+.date:empty:before{
+  content:"10/2000 - 10/2000";
+  color: rgb(172, 172, 172);
+}
+/* minor and GPA maybe scholarships */

@@ -1,4 +1,12 @@
-
+$(document).ready(function(){
+  $("#resume *").each(function(){
+    // console.log(this)
+    if(this.children.length == 0){
+      $(this).attr("contenteditable","true")
+      console.log(this)
+    }
+  });
+});
 
 function loadNewStyles(){
     newStyle = document.getElementById("style-change").value;
@@ -8,7 +16,7 @@ function loadNewStyles(){
 function downloadResume(downloadNode){
     a = document.createElement("a");
     blob = new Blob(
-      [document.getElementById("printable-resume").innerHTML],
+      [document.getElementById("print-space").innerHTML],
       {type: "text/html"});
     object_URL = URL.createObjectURL(blob);
     a.href = object_URL;
