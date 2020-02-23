@@ -3,8 +3,19 @@ $(document).ready(function(){
   // to be editable
   $("#resume *").each(function(){
     if(this.children.length == 0){
-      $(this).attr("contenteditable","true")
+      $(this).attr("contenteditable","true");
+    }else if($(this).children(".handle").length >0){
+      $(this).attr("contenteditable","true");
+      $(this).children(".handle").attr("contenteditable","false");
     }
+  });
+  $( ".responsibilities, .skill-list" ).sortable({
+    //revert: true,
+    handle: ".handle",
+    items: "> li",
+    // cursor: "move",
+    // snap: true, // snapTolerance:10,
+    containment:"parent",
   });
 });
 

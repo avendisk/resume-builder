@@ -1,5 +1,14 @@
 
+/*_______________________________________________________________________________________________*/
+/*Draggable styling*/
+.handle{
+  cursor:grab;
+  float: right;
+  margin-left: 2em;
+  font-size:large;
+}
 
+/*_______________________________________________________________________________________________*/
 /* DROPDOWN CSS */
 /* Dropdown Button */
 .dropbtn {
@@ -51,8 +60,13 @@
   display:block;
 }
 
-
+/*_______________________________________________________________________________________________*/
 /* DEFAULT TEXT FOR ALL DIVS */
+.ui-sortable>li:empty:after{
+  content:'<span class="handle">&#8645;</span>';
+  color: rgb(179, 15, 15);
+}
+
 #email:empty:before{
   content:"youremail@domain.com";
   color: rgb(172, 172, 172);
